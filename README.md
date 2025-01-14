@@ -3,7 +3,7 @@
   <img src="src/black-logo.jpg" alt="ZKPunk logo" />
 
 
-  <a href="[https://discord.gg/y2bGrAKQ4Q](https://discord.gg/zkstudy)"><img src="https://img.shields.io/discord/907080577096757279?color=5865F2&logo=discord&logoColor=white&label=discord" alt="Discord server" /></a>
+  <a href="[https://discord.gg/y2bGrAKQ4Q](https://discord.gg/y2bGrAKQ4Q)"><img src="https://img.shields.io/discord/907080577096757279?color=5865F2&logo=discord&logoColor=white&label=discord" alt="Discord server" /></a>
 
 </div>
 
