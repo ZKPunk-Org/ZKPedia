@@ -17,7 +17,7 @@ Alice 拥有一个秘密数字，`a`，我们可以把这个数字想象成「�
 
 Schnorr 协议充分利用了有限域和循环群之间单向映射，实现了最简单的零知识证明安全协议：Alice 向 Bob 证明她拥有 `PK` 对应的私钥 `sk` 
 
-![](http://imagesoda.oss-cn-beijing.aliyuncs.com/Sodaoo/2023-02-04-120945.png)
+![](https://imagesoda.oss-cn-beijing.aliyuncs.com/Sodaoo/2023-02-04-120945.png)
 
 1. 第一步：为了保证零知识，Alice 需要先产生一个随机数 `r`，这个随机数的用途是用来保护私钥 $a$ 无法被 Bob 抽取出来。这个随机数也需要映射到椭圆曲线群上即 `rG`。  ( 映射之后 , Bob 就不可能通过 `rG` 推算出 `r ` )
 2. 第二步：Bob 要提供一个随机数进行挑战，我们把它称为  `c`。
@@ -37,7 +37,7 @@ z*G ?= R + c*PK
 3.  还有，在协议第一步中产生的随机数 `r` 保证了 `a` 的保密性。因为任何一个秘密当和一个符合「一致性分布」的随机数相加之后的和仍然符合「一致性分布」。
 
 看懂了这个图就看懂了 !!!!! 
-![](http://imagesoda.oss-cn-beijing.aliyuncs.com/Sodaoo/2023-02-04-120945.png)
+![](https://imagesoda.oss-cn-beijing.aliyuncs.com/Sodaoo/2023-02-04-120945.png)
 
 
 是 Sigma 零知识证明的一个特例
@@ -211,7 +211,7 @@ EdDSA 正是为了解决 Schnorr 签名私钥泄露的问题 :  他不是选择�
 
 在聊 zk-SNARKs 之前, 首先来看 NARK(Non-interactive ARgument of Knowledge) :
 
-![](http://imagesoda.oss-cn-beijing.aliyuncs.com/Sodaoo/2023-07-20-023801.png)
+![](https://imagesoda.oss-cn-beijing.aliyuncs.com/Sodaoo/2023-07-20-023801.png)
 -  C : 电路 Circuit 
 -  $x$ : 公开声明 public statement
 -  $w$ : $\color{brown}secret$ _witness_ 
@@ -220,7 +220,7 @@ EdDSA 正是为了解决 Schnorr 签名私钥泄露的问题 :  他不是选择�
 -  $vp$ 表示**公开的**参数,供验证者使用。
 
 
-![](http://imagesoda.oss-cn-beijing.aliyuncs.com/Sodaoo/2023-07-20-024037.png)
+![](https://imagesoda.oss-cn-beijing.aliyuncs.com/Sodaoo/2023-07-20-024037.png)
 
 证明者和验证者各自会输入 : 
 - prover takes the  $x$ (public statement)   &  $pp$ (public (circuit)params)  &  the Witness

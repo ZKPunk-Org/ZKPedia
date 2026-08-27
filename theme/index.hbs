@@ -144,8 +144,8 @@
                             <i class="fa fa-globe"></i>
                         </button>
                         <ul id="lang-list" class="theme-popup" style="left: auto;" aria-label="Languages" role="menu">
-                            <li role="none"><button role="menuitem" class="theme"><a id="lang-cn">中文</a></button></li>
-                            <li role="none"><button role="menuitem" class="theme"><a id="lang-en">English</a></button></li>
+                            <li role="none"><button role="menuitem" class="theme"><a id="lang-cn" href="/">中文</a></button></li>
+                            <li role="none"><button role="menuitem" class="theme"><a id="lang-en" href="/en/">English</a></button></li>
                         </ul>
                         {{#if print_enable}}
                         <a href="{{ path_to_root }}print.html" title="Print this book" aria-label="Print this book">
@@ -401,20 +401,33 @@
         })();
 
         </script>
-        <script src="https://giscus.app/client.js"
-                data-repo="zkp-co-learning/zkp-co-learning.github.io"
-                data-repo-id="R_kgDOKNpxMQ"
-                data-category="Announcements"
-                data-category-id="DIC_kwDOKNpxMc4CZ2LA"
-                data-mapping="pathname"
-                data-strict="0"
-                data-reactions-enabled="1"
-                data-emit-metadata="0"
-                data-input-position="bottom"
-                data-theme="light"
-                data-lang="zh-CN"
-                crossorigin="anonymous"
-                async>
+        <!--
+          Giscus comments. Injected from script so the widget language follows
+          the edition the reader is actually on (/en/ -> English).
+          NOTE: data-repo still points at the pre-migration repository; update it
+          together with data-repo-id from https://giscus.app when moving the
+          discussion thread to ZKPunk-Org/ZKPedia.
+        -->
+        <script>
+        (function () {
+          var isEn = window.location.pathname.indexOf('/en/') === 0;
+          var s = document.createElement('script');
+          s.src = 'https://giscus.app/client.js';
+          s.setAttribute('data-repo', 'zkp-co-learning/zkp-co-learning.github.io');
+          s.setAttribute('data-repo-id', 'R_kgDOKNpxMQ');
+          s.setAttribute('data-category', 'Announcements');
+          s.setAttribute('data-category-id', 'DIC_kwDOKNpxMc4CZ2LA');
+          s.setAttribute('data-mapping', 'pathname');
+          s.setAttribute('data-strict', '0');
+          s.setAttribute('data-reactions-enabled', '1');
+          s.setAttribute('data-emit-metadata', '0');
+          s.setAttribute('data-input-position', 'bottom');
+          s.setAttribute('data-theme', 'light');
+          s.setAttribute('data-lang', isEn ? 'en' : 'zh-CN');
+          s.setAttribute('crossorigin', 'anonymous');
+          s.async = true;
+          document.body.appendChild(s);
+        })();
         </script>
     </body>
 </html>

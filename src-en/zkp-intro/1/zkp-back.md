@@ -2,6 +2,9 @@
 
 *Exploring the Zero-Knowledge Proof Series (Part 1)*
 
+> Author: **Yu Guo @ SECBIT** (郭宇), <https://github.com/sec-bit>  
+> Original (Chinese): <https://github.com/sec-bit/learning-zkp/>
+
 [TOC]
 
 

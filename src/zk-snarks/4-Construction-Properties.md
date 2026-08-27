@@ -125,7 +125,7 @@ $$
 
 在在三次运算中, 必须为每个*变量多项式* 都分别算出一个对应的系数, 或者如果这个多项式在计算的操作数或者输出中没有被用到的话, 系数就置为 0 : 
 
-![](http://imagesoda.oss-cn-beijing.aliyuncs.com/Sodaoo/2023-07-28-152525.jpg)
+![](https://imagesoda.oss-cn-beijing.aliyuncs.com/Sodaoo/2023-07-28-152525.jpg)
 如上图
 - 对于左操作数 : a 在第 1 行约束出现, 所以 $L(1) = 1, \ L(2)/L(3) = 0$ ,  w 在第 2/3 行约束出现, 所以 $L(1) = 0, \ L(2)/L(3) = 1$ ,
 - 对于右操作数 : **注意** 第 2 行约束的 $\color{red}r_a(2) =-1$ 
@@ -144,7 +144,7 @@ Next we leverage  `polynomial interpolation` to find each  _variable polynomial_
 
 绘制出来就是：
 
-![](http://imagesoda.oss-cn-beijing.aliyuncs.com/Sodaoo/2023-07-28-153215.jpg)
+![](https://imagesoda.oss-cn-beijing.aliyuncs.com/Sodaoo/2023-07-28-153215.jpg)
 
 
 OK! Now we are ready to prove computation through polynomials.

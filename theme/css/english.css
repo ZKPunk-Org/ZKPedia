@@ -1,0 +1,32 @@
+/*
+ * English edition typography.
+ *
+ * The site body font is LXGW WenKai, a Chinese handwriting face. It suits the
+ * Chinese edition, but its Latin glyphs read as informal to an English reader,
+ * which is the wrong signal for material this technical. Scope a normal reading
+ * stack to the English build only -- mdBook stamps lang="en" on <html> there.
+ *
+ * To revert: delete this file and its entry in book.toml's additional-css.
+ */
+html[lang="en"] {
+  font-family: "Charter", "Bitstream Charter", "Iowan Old Style", "Source Serif 4",
+               "Source Serif Pro", Georgia, Cambria, "Times New Roman", Times, serif;
+}
+
+html[lang="en"] .sidebar,
+html[lang="en"] .menu-title,
+html[lang="en"] #searchbar,
+html[lang="en"] .searchresults-header {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+               "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+}
+
+html[lang="en"] h1,
+html[lang="en"] h2,
+html[lang="en"] h3,
+html[lang="en"] h4,
+html[lang="en"] h5 {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+               "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+  letter-spacing: -0.01em;
+}

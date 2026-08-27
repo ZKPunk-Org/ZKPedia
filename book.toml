@@ -1,17 +1,16 @@
 [book]
 authors = ["zkp-co-learning contributors"]
-language = "cn"
+language = "zh"
 multilingual = false
 src = "src"
 title = "ZKPunk's ZKPedia"
-description = ""
+description = "A community-maintained zero-knowledge proof knowledge base."
 
 [build]
-extra-watch-dirs = ["po"]
 
 
-# [preprocessor.translation] // now we have md-booki18n
-# [preprocessor.pagetoc]     // poor adaptability
+# Translations are plain parallel Markdown under src-en/ -- no gettext/po pipeline.
+# See src-en/how-to-contribute.md
 
 [preprocessor]
 
@@ -28,25 +27,26 @@ max-level = 4
 [preprocessor.admonish]
 command = "mdbook-admonish"
 assets_version = "3.0.0" # do not edit: managed by `mdbook-admonish install`
-after = ["gettext"]
 
 [preprocessor.open-on-gh]
 command = "mdbook-open-on-gh"
 renderer = ["html"]
 
-[preprocessor.gettext]
-after = ["links"]
 
 [preprocessor.mermaid]
 command = "mdbook-mermaid"
 
 
 [output.html]
+# Required so the 404 page loads its CSS/JS when GitHub Pages serves it for a
+# request deep in the tree (e.g. /en/plonk-intro-cn/...). Overridden to "/en/"
+# for the English build; see the justfile.
+site-url = "/"
 mathjax-support = true
 no-section-label = true
 theme = "theme"
 additional-js  = ["theme/mermaid.min.js", "theme/mermaid-init.js"]
-additional-css = ["./mdbook-admonish.css", "theme/css/mdbook-admonish.css", "theme/css/open-in.css"]
+additional-css = ["./mdbook-admonish.css", "theme/css/mdbook-admonish.css", "theme/css/open-in.css", "theme/css/english.css"]
 git-repository-url = "https://github.com/ZKPunk-Org/ZKPedia"
 open-on-text = "Found a bug?! [Edit this page on GitHub.]"
 edit-url-template = "https://github.com/ZKPunk-Org/ZKPedia/edit/main/{path}"

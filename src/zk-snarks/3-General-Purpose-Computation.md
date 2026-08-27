@@ -123,7 +123,7 @@ $$
 
 保持 setup 阶段不变，协议更新为：
 
-![](http://imagesoda.oss-cn-beijing.aliyuncs.com/Sodaoo/2023-07-28-041907.jpg)
+![](https://imagesoda.oss-cn-beijing.aliyuncs.com/Sodaoo/2023-07-28-041907.jpg)
 
 这个协议就能够证明两个值相乘的计算结果是正确的了。
 

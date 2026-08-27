@@ -2,6 +2,9 @@
 
 *Exploring Zero-Knowledge Proofs Series (Part 3)*
 
+> Author: **Yu Guo @ SECBIT** (郭宇), <https://github.com/sec-bit>  
+> Original (Chinese): <https://github.com/sec-bit/learning-zkp/>
+
 [TOC]
 
 > And what, Socrates, is the food of the soul? Surely, I said, knowledge is the food of the soul.  

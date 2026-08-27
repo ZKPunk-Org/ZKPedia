@@ -1,1 +1,32 @@
-<meta property="og:title" content="{{ path }}" />
+<meta property="og:title" content="{{ title }}" />
+<meta property="og:site_name" content="ZKPedia" />
+<meta property="og:type" content="article" />
+
+<!--
+  The English edition mirrors Chinese paths under /en/, so the alternate URL for
+  any page can be derived from its own path. Emitted from script because mdBook
+  templates expose the source path with a .md extension, not the rendered one.
+-->
+<script>
+(function () {
+  try {
+    var origin = 'https://learn.zkpunk.pro';
+    var path = window.location.pathname;
+    var zhPath = path.indexOf('/en/') === 0 ? path.slice(3) : path;
+    var enPath = '/en' + zhPath;
+
+    function link(rel, hreflang, href) {
+      var el = document.createElement('link');
+      el.setAttribute('rel', rel);
+      if (hreflang) { el.setAttribute('hreflang', hreflang); }
+      el.setAttribute('href', origin + href);
+      document.head.appendChild(el);
+    }
+
+    link('canonical', null, path);
+    link('alternate', 'zh-Hans', zhPath);
+    link('alternate', 'en', enPath);
+    link('alternate', 'x-default', enPath);
+  } catch (e) {}
+})();
+</script>

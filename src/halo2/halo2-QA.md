@@ -423,10 +423,10 @@ currently, `halo2` fills in `TableColumn`s with a specified default value, which
 
 it is true that both the permutation and lookup arguments internally make use of some variant of multiset equality.
 however, the permutation argument does so on tagged cells, thus enforcing a specific permutation.
-![](http://imagesoda.oss-cn-beijing.aliyuncs.com/Sodaoo/2023-10-08-080704.jpg)
+![](https://imagesoda.oss-cn-beijing.aliyuncs.com/Sodaoo/2023-10-08-080704.jpg)
 
 whereas the lookup argument does so on untagged cells, thus allowing any permutation.
-![](http://imagesoda.oss-cn-beijing.aliyuncs.com/Sodaoo/2023-10-08-080721.jpg)
+![](https://imagesoda.oss-cn-beijing.aliyuncs.com/Sodaoo/2023-10-08-080721.jpg)
 (note that the complete lookup argument involves additional checks besides this multiset equality check.)
 
 str4d:
@@ -731,7 +731,7 @@ Since the cells used appear to be less, does this optimisation make sense? (even
 I also see additional detail called "10 usable columns" and "26 usable columns", what does it mean and does it contribute to the prover cost?
 Below is circuit layout before and after
 
-![](http://imagesoda.oss-cn-beijing.aliyuncs.com/Sodaoo/2023-10-08-090403.jpg)
+![](https://imagesoda.oss-cn-beijing.aliyuncs.com/Sodaoo/2023-10-08-090403.jpg)
 
 YT:
 (nice diagrams!)

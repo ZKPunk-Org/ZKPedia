@@ -1,69 +1,80 @@
-# Sample workflow for building and deploying a mdBook site to GitHub Pages
+# Builds both editions of ZKPedia with mdBook and publishes them to GitHub Pages.
 #
-# To get started with mdBook see: https://rust-lang.github.io/mdBook/index.html
+#   book/      Chinese edition  -> https://learn.zkpunk.pro/
+#   book/en/   English edition  -> https://learn.zkpunk.pro/en/
 #
 name: Deploy ZKPedia to Pages
 
 on:
-  # Runs on pushes targeting the default branch
   push:
     branches: ["main"]
     paths:
       - "src/**"
-      - "po/**"
+      - "src-en/**"
       - "theme/**"
+      - "tools/**"
       - "justfile"
       - "book.toml"
-      - .github/workflows/mdbook.yml
+      - "macros.txt"
+      - "mdbook-admonish.css"
+      - ".github/workflows/mdbook.yml"
 
-  # Allows you to run this workflow manually from the Actions tab
+  # Allows running this workflow manually from the Actions tab.
   workflow_dispatch:
 
-# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
   contents: read
   pages: write
   id-token: write
 
-# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
-# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
+# Allow one concurrent deployment; never cancel a production deploy in flight.
 concurrency:
   group: "pages"
   cancel-in-progress: false
 
 jobs:
-  # Build job
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
-      # Init build environment
       - name: Install just
+        env:
+          JUST_VERSION: "1.36.0"
         run: |
-          curl --proto '=https' --tlsv1.2 -sSf https://just.systems/install.sh | sudo bash -s -- --to /bin
-      - name: Install cargo
-        run: |
-          curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf -y | sh
-          rustup update
-      - name: Init build environment
-        run: just init-builder
+          curl --proto '=https' --tlsv1.2 -sSfL \
+            "https://github.com/casey/just/releases/download/${JUST_VERSION}/just-${JUST_VERSION}-x86_64-unknown-linux-musl.tar.gz" \
+            -o /tmp/just.tar.gz
+          tar zxf /tmp/just.tar.gz -C /tmp just
+          sudo install -m 0755 /tmp/just /usr/local/bin/just
+          just --version
 
-      # Build
-      - name: Build with mdBook
+      - name: Install the mdBook toolchain
+        run: |
+          echo "$HOME/.local/bin" >> "$GITHUB_PATH"
+          just init-builder
+
+      - name: Build both editions
         run: just build
 
-      # Upload artifact for Github pages
+      - name: Check the build produced both editions
+        run: |
+          test -f book/index.html
+          test -f book/CNAME
+          test -f book/en/index.html
+          test -f book/en/zkp-intro/1/zkp-back.html
+
+      - name: Report English translation coverage
+        run: just status
+
       - name: Setup Pages
-        id: pages
-        uses: actions/configure-pages@v3
+        uses: actions/configure-pages@v5
 
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v1
+        uses: actions/upload-pages-artifact@v3
         with:
           path: ./book
 
-  # Deployment job
   deploy:
     environment:
       name: github-pages
@@ -73,4 +84,4 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v2
+        uses: actions/deploy-pages@v5
