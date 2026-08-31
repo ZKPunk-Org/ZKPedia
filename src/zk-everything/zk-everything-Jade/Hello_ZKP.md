@@ -146,17 +146,17 @@
 
 对ZKP有一个大致的了解后，可以具体来学学一些证明系统，首推Plonk。
 
-### [理解Plonk系列](https://github.com/sec-bit/learning-zkp/tree/master/plonk-intro-cn) - 郭宇
+### [理解Plonk系列](https://github.com/sec-bit/learning-zkp/tree/master/plonk-intro-zh) - 郭宇
 
 如果你想深入理解Plonk，强烈推荐郭宇老师的这一系列文章。有的文章中会涉及较多的数学公式，推荐自己跟着文章手写推导一遍（或者更多），由于这些置换证明、算术约束、拷贝约束、查表约束等会在很多证明系统中反复用到，因此这里打下扎实的基础还是非常有必要的。
 
-- [1-Plonkish Arithmetization](https://github.com/sec-bit/learning-zkp/blob/master/plonk-intro-cn/1-plonk-arithmetization.md)
-- [2-多项式编码](https://github.com/sec-bit/learning-zkp/blob/master/plonk-intro-cn/2-plonk-lagrange-basis.md)
-- [3-置换证明](https://github.com/sec-bit/learning-zkp/blob/master/plonk-intro-cn/3-plonk-permutation.md)
-- [4-算术约束与拷贝约束](https://github.com/sec-bit/learning-zkp/blob/master/plonk-intro-cn/4-plonk-constraints.md)
-- [5-多项式承诺](https://github.com/sec-bit/learning-zkp/blob/master/plonk-intro-cn/5-plonk-polycom.md)
-- [6-实现 Zero Knowledge](https://github.com/sec-bit/learning-zkp/blob/master/plonk-intro-cn/6-plonk-randomizing.md)
-- [7-Lookup Gate](https://github.com/sec-bit/learning-zkp/blob/master/plonk-intro-cn/7-plonk-lookup.md)
+- [1-Plonkish Arithmetization](https://github.com/sec-bit/learning-zkp/blob/master/plonk-intro-zh/1-plonk-arithmetization.md)
+- [2-多项式编码](https://github.com/sec-bit/learning-zkp/blob/master/plonk-intro-zh/2-plonk-lagrange-basis.md)
+- [3-置换证明](https://github.com/sec-bit/learning-zkp/blob/master/plonk-intro-zh/3-plonk-permutation.md)
+- [4-算术约束与拷贝约束](https://github.com/sec-bit/learning-zkp/blob/master/plonk-intro-zh/4-plonk-constraints.md)
+- [5-多项式承诺](https://github.com/sec-bit/learning-zkp/blob/master/plonk-intro-zh/5-plonk-polycom.md)
+- [6-实现 Zero Knowledge](https://github.com/sec-bit/learning-zkp/blob/master/plonk-intro-zh/6-plonk-randomizing.md)
+- [7-Lookup Gate](https://github.com/sec-bit/learning-zkp/blob/master/plonk-intro-zh/7-plonk-lookup.md)
 
 ## Halo2
 
